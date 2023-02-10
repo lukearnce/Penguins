@@ -1,0 +1,28 @@
+---
+title: "sexual_dimorphism"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(palmerpenguins)
+library(tidyverse)
+```
+
+## Sexual dimorphism
+
+Here are some graphs regarding the level of sexual dimorphism.
+
+```{r}
+ggplot(data = penguins) + 
+  geom_point(mapping = aes(x = bill_length_mm, y=bill_depth_mm, color=sex)) + 
+  facet_wrap(~species)
+```
+
+```{r}
+penguins %>%
+  ggplot(mapping = aes(x = bill_length_mm, y=bill_depth_mm, color=sex)) +
+  geom_point(size=1) +
+  facet_wrap(~species)
+```
+

@@ -1,0 +1,13 @@
+name: "Penguins"
+navbar:
+  title: "This is my penguin website"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Single trait distribution"
+      href: single_trait.html
+    - text: "Relationship between multiple traits"
+      href: multiple_traits.html
+    - text: "Sexual dimorphism"
+      href: sexual_dimorphism.html
+output_dir: "."

@@ -1,0 +1,27 @@
+---
+title: "multiple_traits"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(palmerpenguins)
+library(tidyverse)
+```
+
+## Relationship between multiple traits
+Here are graphs exploring the relationship between multiple traits.
+```{r}
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = body_mass_g, y = flipper_length_mm, color = species)) 
+  
+```
+
+```{r}
+penguins%>%
+  ggplot(mapping = aes(x = body_mass_g, y=flipper_length_mm, color=species)) +
+  geom_point() +
+  geom_smooth(method="lm")
+
+```
+

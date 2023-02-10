@@ -1,0 +1,23 @@
+---
+title: "single_trait"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(palmerpenguins)
+library(tidyverse)
+```
+
+## Single trait distribution
+Here are some graphs representing distribution of a single trait.
+```{r}
+ggplot(data = penguins, aes(x = species, y = body_mass_g)) + geom_bar(stat = "identity")
+```
+```{r}
+penguins %>%
+  ggplot() +
+  geom_density(mapping = aes(x = bill_length_mm, fill=species), alpha=0.5)
+
+```
+
